@@ -1,11 +1,8 @@
-// erstellen eines String 
-let zahlAlsText = "9";
+let zahlAlsText = "1989"
 
-// Ausgabe des Strings
+// übergabe des wertes zahlAlsText an zahl und konvertierung mit Number()
+let zahl = Number(zahlAlsText);
+
+// Ausgabe des Typen
+console.log(typeof zahl);
 console.log(typeof zahlAlsText);
-
-// Ändern des Strings zu Number mit dem Objekt Number
-zahlAlsText = Number(zahlAlsText)
-
-// Ausgabe des neuen Werts
-console.log(typeof zahlAlsText)
