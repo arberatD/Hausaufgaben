@@ -40,8 +40,8 @@ function playGame() {
       } else if (userGuess === randomNum) {
         console.log(`Geil! Du hast die Zahl ${randomNum} erraten. So oft hast du es probiert: ${attempts}`);
         // Frage den Spieler, ob er ein neues Spiel starten möchte
-        rl.question('Willst du es nochmal probieren? (y/n): ', function(input) {
-          if (input.toLowerCase() === 'ja') {
+        rl.question('Willst du es nochmal probieren? (ja/nein): ', function(input) {
+          if (input.toLowerCase() === 'ja' || 'j' || 'yes' || 'yeah' || 'y') {
             playGame();
           } else {
             // Beenden des Spiels und Schließen des readline-Interfaces
