@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validierungsformular</title>
+    <title>Formular Validierung</title>
 </head>
 <body>
-<form id = "meinFormular">
-    Vorname: <input tpye = "text" id="vorname"><br><br>
-    Nachname: <input tpye = "text" id="nachname"><br><br>
-    Email: <input tpye = "text" id="email"><br><br>
-    Geburtsdatum: <input tpye = "text" id="geburtstag" placeholder="DD-MM-YYYY"
+
+<form id="meinFormular">
+    Vorname: <input type="text" id="vorname"><br><br>
+    Nachname: <input type="text" id="nachname"><br><br>
+    E-Mail: <input type="text" id="email"><br><br>
+    Geburtsdatum: <input type="text" id="geburtstag" placeholder="YYYY-MM-DD"><br><br>
     <input type="submit" value="Absenden">
 </form>
 
-<p id="meldung"></p>
+<p id="error" style="color: red;"></p>
+<p id="meldung" style="color: green;"></p>
 
 <script src="validierung.js"></script>
+
 </body>
 </html>
