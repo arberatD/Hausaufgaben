@@ -1,0 +1,68 @@
+<!--//Ich habe eine Funktion hinzugefügt, mit der man auch Todos entfernen kann-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Meine Todo App</title>
+    <style>
+        .todo-list {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>FlowList</h1>
+    <div><!-- Dieser div ist leer--></div>
+    <div class="todo-list">
+        <ul id="todo">
+           
+        </ul>
+        <form onsubmit="return handleFormSubmit()">
+            <input id="todoName" type="text" size="60" placeholder="Deine Aufgaben für heute eintragen">
+            <input onclick="handleClick()" type="button" value="Todo hinzufügen">
+        </form>
+    </div>
+
+    <script>
+        function handleClick() {
+            const value = document.querySelector("#todoName").value;
+            if (value.trim() === "") return;  // Verhindert das Hinzufügen von leeren Todos
+            const todo = document.querySelector("#todo");
+
+            const li = document.createElement("li");
+            li.textContent = value;
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "x";
+            removeButton.onclick = function() {
+                todo.removeChild(li);
+            }
+            li.appendChild(removeButton);
+
+            todo.appendChild(li);
+
+            // Setzt das Eingabefeld zurück
+            document.querySelector("#todoName").value = "";
+        }
+
+        function handleFormSubmit() {
+            // Verhindert das tatsächliche Absenden des Formulars
+            event.preventDefault();
+
+            // Fügt das Todo hinzu
+            handleClick();
+            
+            return false;
+        }
+
+        // Hinzufügen eines Event Listeners zu allen vorhandenen Entfernen-Buttons
+        // Hiermit werden Einträge gelöscht nachdem sie hinzugefügt wurden
+        const existingRemoveButtons = document.querySelectorAll("button");
+        existingRemoveButtons.forEach(button => {
+            button.onclick = function() {
+                const li = button.parentElement;
+                li.parentElement.removeChild(li);
+            }
+        });
+    </script>
+</body>
+</html>
