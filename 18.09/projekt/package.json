@@ -1,0 +1,14 @@
+{
+  "name": "abi-projekt",
+  "version": "1.0.0",
+  "description": "Abis Projekt",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
+}
